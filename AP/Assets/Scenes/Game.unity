@@ -334,9 +334,11 @@ MonoBehaviour:
   - {fileID: 9044357526739362528, guid: 90df6a9bf8627a9479e3f653974842cd, type: 3}
   - {fileID: 7254834086967888311, guid: 198fe821ef609704b8b4afc3d2369617, type: 3}
   - {fileID: 715717460369229282, guid: 3c7cb5079cca68741aad194620d13cf5, type: 3}
-  ItemsPools: {fileID: 275447151}
+  countSpawn: 3
   spawnSpot: {fileID: 1132998938}
   _itemsPoolsStorage: {fileID: 275447152}
+  preloadCountItems: 10
+  ItemsPools: {fileID: 275447153}
 --- !u!1 &275447151
 GameObject:
   m_ObjectHideFlags: 0
@@ -363,7 +365,7 @@ Transform:
   m_GameObject: {fileID: 275447151}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -3.71, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -381,6 +383,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7652c101ad20d6f4e97c02a9d6a9d124, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _timeBetweenSpawnItems: 2
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
