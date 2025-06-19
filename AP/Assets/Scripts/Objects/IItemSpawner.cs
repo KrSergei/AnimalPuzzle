@@ -2,6 +2,8 @@ using UnityEngine;
 
 public interface IItemSpawner 
 {
+    public void InitPools();
+
     public GameObject GetItem();
 
     public void SetItem(GameObject item);

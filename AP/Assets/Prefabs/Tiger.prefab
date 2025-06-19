@@ -12,7 +12,8 @@ GameObject:
   - component: {fileID: 2558766795844301855}
   - component: {fileID: 9178275461916906939}
   - component: {fileID: 6417221501754521094}
-  m_Layer: 0
+  - component: {fileID: -1666481517993965938}
+  m_Layer: 7
   m_Name: Tiger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -180,3 +181,16 @@ PolygonCollider2D:
       - {x: 0.48046875, y: -0.390625}
       - {x: 0.4921875, y: -0.34375}
   m_UseDelaunayMesh: 0
+--- !u!114 &-1666481517993965938
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 715717460369229282}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9bb5457879e29f4099e6976edbbd60d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _indexPool: 0

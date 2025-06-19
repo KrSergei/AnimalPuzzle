@@ -17,9 +17,7 @@ public class ItemSpawner : MonoBehaviour, IItemSpawner
     [Header("POOLS")]
     public int preloadCountItems = 10;
     [SerializeField]
-    private ItemsPools ItemsPools;
-
-    private List<GameObject> _spawnedItems = new();
+    private ItemsPools ItemsPools;    
 
     private void Start()
     {
@@ -28,27 +26,17 @@ public class ItemSpawner : MonoBehaviour, IItemSpawner
 
     private void Update()
     {
-        if (Input.GetKey(KeyCode.Space))
-            ItemsPools.GetItem(GetRandom(), spawnSpot, countSpawn);
-    }
-
-    private int GetRandom()
-    {
-        return Random.Range(0, items.Count);
-    }
-
-    private void InitPools()
-    {
-        for (int i = 0; items.Count > i; i++)
-        {
-            //SetItem(items[i]);
-            ItemsPools.Preload(items[i], _itemsPoolsStorage, preloadCountItems, i);
-        }
+        if (Input.GetKeyUp(KeyCode.Space))
+            ItemsPools.GetItem(spawnSpot, countSpawn);
+        if (Input.GetKeyUp(KeyCode.R))
+            ItemsPools.ReturItemToPool();
+        if (Input.GetKeyUp(KeyCode.A))
+            Clear();
     }
 
     public void Clear()
     {
-        throw new System.NotImplementedException();
+        ItemsPools.ReturnAllItemstoPool();
     }
 
     public GameObject GetItem()
@@ -59,5 +47,13 @@ public class ItemSpawner : MonoBehaviour, IItemSpawner
     public void SetItem(GameObject item)
     {
         throw new System.NotImplementedException();
+    }
+
+    public void InitPools()
+    {
+        for (int i = 0; items.Count > i; i++)
+        {
+            ItemsPools.Preload(items[i], _itemsPoolsStorage, preloadCountItems, i);
+        }
     }
 }
