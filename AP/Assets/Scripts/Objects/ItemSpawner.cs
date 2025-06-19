@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using UnityEngine;
 
 public class ItemSpawner : MonoBehaviour, IItemSpawner
@@ -27,26 +28,28 @@ public class ItemSpawner : MonoBehaviour, IItemSpawner
     private void Update()
     {
         if (Input.GetKeyUp(KeyCode.Space))
-            ItemsPools.GetItem(spawnSpot, countSpawn);
+            _ = ItemsPools.GetItem(spawnSpot, countSpawn);
+
         if (Input.GetKeyUp(KeyCode.R))
-            ItemsPools.ReturItemToPool();
+            _ = ReturnAllItemsToPool();
+
         if (Input.GetKeyUp(KeyCode.A))
-            Clear();
+            _ = Clear();
     }
 
-    public void Clear()
+    public async Task Clear()
     {
-        ItemsPools.ReturnAllItemstoPool();
+        await ItemsPools.ReturnAllItemstoPool();
     }
 
-    public GameObject GetItem()
+    public async Task ReturnAllItemsToPool()
     {
-        throw new System.NotImplementedException();
+        await ItemsPools.ReturItemToPool();
     }
 
-    public void SetItem(GameObject item)
+    public async Task GetItem()
     {
-        throw new System.NotImplementedException();
+        await ItemsPools.ReturItemToPool();
     }
 
     public void InitPools()

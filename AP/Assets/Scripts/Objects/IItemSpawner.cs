@@ -1,12 +1,13 @@
+using System.Threading.Tasks;
 using UnityEngine;
 
 public interface IItemSpawner 
 {
     public void InitPools();
 
-    public GameObject GetItem();
+    public Task GetItem();
 
-    public void SetItem(GameObject item);
+    public Task ReturnAllItemsToPool();
 
-    public void Clear();   
+    public Task Clear();   
 }
